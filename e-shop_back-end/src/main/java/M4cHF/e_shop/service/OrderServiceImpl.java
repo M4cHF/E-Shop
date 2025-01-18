@@ -5,6 +5,7 @@ import M4cHF.e_shop.model.Order;
 import M4cHF.e_shop.repository.OrderRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -39,7 +40,7 @@ public class OrderServiceImpl implements OrderService{
             throw new ResourceNotFoundException("Order with id = " + id + " not found");
         }
         Order existingOrder = existingOrderOptional.get();
-        existingOrder.setDateOrder(order.getDateOrder());
+        existingOrder.setDateOrder(new Date());
         existingOrder.setOrderDetails(order.getOrderDetails());
         existingOrder.setUser(order.getUser());
         return orderRepository.save(existingOrder);
