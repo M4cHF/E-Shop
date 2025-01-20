@@ -1,0 +1,82 @@
+
+.hero {
+    background: #f4f4f4;
+    padding: 4rem 0;
+    text-align: center;
+  }
+  
+  .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Profile Section */
+  .profile {
+    padding: 4rem 0;
+  }
+  
+  .profile-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .profile-header {
+    margin-bottom: 2rem;
+  }
+  
+  .profile-picture {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1rem;
+  }
+  
+  .profile-details {
+    text-align: left;
+  }
+  
+  .profile-details h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .profile-details ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .profile-details ul li {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .profile-actions {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .profile-actions .btn {
+    background: #b3d4dc;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .profile-actions .btn:hover {
+    background: #55b4dd;
+  }
+  
+  

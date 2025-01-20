@@ -1,0 +1,79 @@
+
+.hero {
+    background: #ffffff;
+    padding: 4rem 0;
+    text-align: center;
+  }
+  
+  .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* About Us Section */
+  .about-us {
+    padding: 4rem 0;
+  }
+
+  .mission {
+    background: #f5fafc;
+  }
+  
+  .about-us h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .about-us p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.8;
+    text-align: center;
+  }
+  
+  .about-us ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+  }
+  
+  .about-us ul li {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    background-color: #f5fafc;
+  }
+  
+  .team-member {
+    text-align: center;
+  }
+  
+  .team-member img {
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  .team-member h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .team-member p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
