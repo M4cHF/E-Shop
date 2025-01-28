@@ -5,7 +5,7 @@ body {
     font-family: Arial, sans-serif;
   }
      
-  .container {
+  .cat-container {
     display: flex;
     }
      
@@ -97,6 +97,10 @@ body {
     color: #fff;
   }
   
-  .sidebar li:first-child a {
+  /* .sidebar li:first-child a {
     background-color: #f2f2f2;
+  } */
+
+  .topnav input[type=text] {
+    margin-left: 900px;
   }

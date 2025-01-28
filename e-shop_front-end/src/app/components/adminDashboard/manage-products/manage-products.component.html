@@ -1,0 +1,90 @@
+<!-- 
+<br> <br>
+ -->
+
+<div class="container mt-5">
+    <div class="row tm-content-row">
+      <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 tm-block-col">
+        <div class="tm-bg-primary-dark tm-block tm-block-products">
+          <h2 class="tm-block-title">All Products</h2>
+          <div class="tm-product-table-container">
+            <table class="table table-hover tm-table-small tm-product-table">
+              <thead>
+                <tr>
+                  <th scope="col">&nbsp;</th>
+                  <th scope="col">PRODUCT ID</th>
+                  <th scope="col">PRODUCT NAME</th>
+                  <th scope="col">PORDUCT PRICE</th>
+                  <th scope="col">UPDATE</th>
+                  <th scope="col">DELETE</th>
+                  <th scope="col">&nbsp;</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for(product of products; track product){
+                  <tr>
+                    <th scope="row"><input type="checkbox" /></th>
+                    <td>{{product.idProduct}}</td>
+                    <td class="tm-product-name">{{product.nameProduct}}</td>
+                    <td>{{product.priceProduct}}</td>
+                    <td><a routerLink="/dashboard/overview/updateProduct"><button>Update</button></a></td>
+                    <td><button (click)="deleteProduct(product.idProduct)">Delete</button></td>
+                    <td></td>
+                  </tr>
+                }@empty {
+                  <tr>
+                    <td scope="col">&nbsp;</td>
+                    <td scope="col">No product to load</td>
+                    <td scope="col">&nbsp;</td>
+                    <td scope="col">&nbsp;</td>
+                    <td scope="col">&nbsp;</td>
+                    <td scope="col">&nbsp;</td>
+                    <td scope="col">&nbsp;</td> 
+                  </tr>                 
+                }
+              </tbody>
+            </table>
+          </div>
+          <!-- table container -->
+          <button class="btn btn-danger btn-block text-uppercase">
+            Delete selected products
+          </button>
+          <br> <br>
+          <a routerLink="/dashboard/overview/addProduct" routerLinkActive="active"><button class="btn btn-secondary btn-block text-uppercase">add product</button> </a>
+          <hr>
+          <!-- <a href="add-product.html" class="btn btn-secondary btn-block text-uppercase mb-3">Add new product</a> -->
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 tm-block-col">
+        <div class="tm-bg-primary-dark tm-block tm-block-product-categories">
+          <h2 class="tm-block-title">Product Categories</h2>
+          <div class="tm-product-table-container">
+            <table class="table tm-table-small tm-product-table">
+              <tbody>
+                @for(category of categories; track category){
+                  <tr>
+                    <td class="tm-product-name">{{category.nameCategory}}</td>
+                    <td class="text-center">
+                      <button (click)="deleteCategory(category.idCategory)">Delete</button>
+                    </td>
+                    
+                  </tr>
+                }@empty {
+                  <tr>
+                    <td>no category found !</td>
+                  </tr>
+                }                                
+              </tbody>
+            </table>
+          </div>
+          <!-- table container -->
+           <a routerLink="/dashboard/overview/addCategory">
+            <button class="btn btn-secondary btn-block text-uppercase mb-3">Add new category</button>
+           </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<router-outlet></router-outlet>

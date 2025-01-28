@@ -3,22 +3,23 @@
     <p>Explore our curated collection of chic and versatile clothing, designed to effortlessly take you from day to night with timeless elegance.</p>
 </div>
 
-<div class="container">
+<div class="cat-container">
     <div class="sidebar">
         <h2>Categories</h2>
         <ul>
-            <li><a href="#">All Products</a></li>
-            <li><a href="#">T-shirts</a></li>
-            <li><a href="#">Jeans</a></li>
-            
+            @for (category of categories; track category) {
+                <li> {{category.nameCategory}} </li>
+            } @empty {
+                <li>No categoryfound !</li>
+            }            
         </ul>
     </div>
 
     <div class="products-side">
+        <div class="topnav">
+            <input type="text" placeholder="Search..">
+        </div>
         <product-list></product-list>
-    
     </div>
-    
-
     
 </div>
