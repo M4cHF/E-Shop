@@ -27,7 +27,7 @@
                     <td>{{product.idProduct}}</td>
                     <td class="tm-product-name">{{product.nameProduct}}</td>
                     <td>{{product.priceProduct}}</td>
-                    <td><a routerLink="/dashboard/overview/updateProduct"><button>Update</button></a></td>
+                    <td><a routerLink="/dashboard/overview/{{product.idProduct}}/updateProduct"><button>Update</button></a></td>
                     <td><button (click)="deleteProduct(product.idProduct)">Delete</button></td>
                     <td></td>
                   </tr>
