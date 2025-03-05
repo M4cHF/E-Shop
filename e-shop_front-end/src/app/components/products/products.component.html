@@ -1,25 +1,24 @@
 <div class="main-title">
-    <h1>Our products</h1>
-    <p>Explore our curated collection of chic and versatile clothing, designed to effortlessly take you from day to night with timeless elegance.</p>
+  <h1>Our products</h1>
+  <p>
+    Explore our curated collection of chic and versatile clothing, designed to
+    effortlessly take you from day to night with timeless elegance.
+  </p>
 </div>
 
 <div class="cat-container">
-    <div class="sidebar">
-        <h2>Categories</h2>
-        <ul>
-            @for (category of categories; track category) {
-                <li> {{category.nameCategory}} </li>
-            } @empty {
-                <li>No categoryfound !</li>
-            }            
-        </ul>
-    </div>
+  <div class="sidebar">
+    <h2>Categories</h2>
+    <ul>
+      @for (category of categories; track category) {
+      <li>{{ category.nameCategory }}</li>
+      } @empty {
+      <li>No categoryfound !</li>
+      }
+    </ul>
+  </div>
 
-    <div class="products-side">
-        <div class="topnav">
-            <input type="text" placeholder="Search..">
-        </div>
-        <product-list></product-list>
-    </div>
-    
+  <div class="products-side">
+    <product-list></product-list>
+  </div>
 </div>

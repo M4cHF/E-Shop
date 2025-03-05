@@ -1,27 +1,30 @@
+<div class="ms-3">
+  <h1>Our products</h1>
 
+  <div class="input-group mb-3">
+    <input
+      type="search"
+      class="form-control"
+      placeholder="search for products"
+      #query
+      (keyup)="searchForProducts(query.value)"
+      (blur)="searchForProducts('')"
+    />
 
-<div>
-    <h1> Our products</h1>
+    <div class="input-group-append">
+      <button class="btn btn-primary">Search</button>
+    </div>
+  </div>
 </div>
+
 <div class="product-grid">
-    @if(!isLoading && products.length > 0){
-        @for(prod of products; track prod){
-            <div class="product-card">
-                <img src="{{prod.imageUrl}}" alt="Product {{prod.idProduct}}">
-                <h3>{{prod.nameProduct}}</h3>
-                <p>${{prod.priceProduct}}</p>
-                <button>Add to Cart</button>
-            </div>
-        } @empty {
-            there is nothing here
-        }
-    }
-    
+  @if(!isLoading && filteredProducts.length > 0) { @for(prod of
+  filteredProducts; track prod) {
+  <div class="product-card">
+    <img src="{{ prod.imageUrl }}" alt="Product {{ prod.idProduct }}" />
+    <h3>{{ prod.nameProduct }}</h3>
+    <p>${{ prod.priceProduct }}</p>
+    <button>Add to Cart</button>
+  </div>
+  } @empty { there is nothing here } }
 </div>
-
-
-
-    
-
-
-
