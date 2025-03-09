@@ -1,36 +1,83 @@
 <section class="contact-form">
-    <div class="container">
-      <h2>Update product</h2>
-      <form #updateProduct="ngForm" (ngSubmit)="updateProd(updateProduct)">
-        <div class="form-group">
+  <div class="container">
+    <h2>Update product</h2>
+    <form #updateProduct="ngForm" (ngSubmit)="updateProd(updateProduct)">
+      <!-- <div class="form-group">
             <label for="prod_id_update">Product id</label>
             <input type="text" id="prod_id_update" name="prod_id_update" [(ngModel)]="productToUpdate.idProduct" required>
-        </div>
+        </div> -->
 
-        <div class="form-group">
-            <label for="prod_name_update">Product name</label>
-            <input type="text" id="prod_name_update" name="prod_name_update" [(ngModel)]="productToUpdate.nameProduct" required>
-        </div>
-        <div class="form-group">
-            <label for="prod_price_update">Product price</label>
-            <input type="text" id="prod_price_update" name="prod_price_update" [(ngModel)]="productToUpdate.priceProduct"  required>
-        </div>
-        <div class="form-group">
-            <label for="prod_image_update">Product image url</label>
-            <input type="text" id="prod_image_update" name="prod_image_update" [(ngModel)]="productToUpdate.imageUrl" required>
-        </div>
-        <div class="form-group">
-            <label for="prod_description_update">Product description</label>
-            <textarea id="prod_description_update" name="prod_description_update" rows="5" [(ngModel)]="productToUpdate.descriptionProduct" required></textarea>
-        </div>
-        <div class="form-group">
-            <label for="category_id_update">Category id</label>
-            <input type="number" id="category_id_update" name="category_id_update" min="1" [(ngModel)]="productToUpdate.idCategory" required>
-        </div>
-  
-        <button type="submit" class="btn btn-secondary btn-block text-uppercase mb-3">Updtae</button>
-        <br>
-        <a routerLink="/dashboard/manageProducts"><button  class="btn btn-secondary btn-block text-uppercase mb-3">return</button></a>
-      </form>           
-    </div>
-  </section>
+      <div class="form-group">
+        <label for="prod_name_update">Product name</label>
+        <input
+          type="text"
+          id="prod_name_update"
+          name="prod_name_update"
+          [(ngModel)]="productToUpdate.nameProduct"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="prod_price_update">Product price</label>
+        <input
+          type="text"
+          id="prod_price_update"
+          name="prod_price_update"
+          [(ngModel)]="productToUpdate.priceProduct"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="prod_image_update">Product image url</label>
+        <input
+          type="text"
+          id="prod_image_update"
+          name="prod_image_update"
+          [(ngModel)]="productToUpdate.imageUrl"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="prod_description_update">Product description</label>
+        <textarea
+          id="prod_description_update"
+          name="prod_description_update"
+          rows="3"
+          [(ngModel)]="productToUpdate.descriptionProduct"
+          required
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="category_id_update">Category id</label>
+
+        <select
+          id="category_id_update"
+          name="category_id_update"
+          class="form-select"
+          [(ngModel)]="catId"
+          required
+        >
+          <option>Select a category</option>
+          @for (category of categories; track category.idCategory) {
+          <option [value]="category.idCategory">
+            {{ category.nameCategory }}
+          </option>
+          }
+        </select>
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-secondary btn-block text-uppercase mb-3"
+      >
+        Updtae
+      </button>
+      <br />
+      <a routerLink="/dashboard/manageProducts"
+        ><button class="btn btn-secondary btn-block text-uppercase mb-3">
+          return
+        </button></a
+      >
+    </form>
+  </div>
+</section>

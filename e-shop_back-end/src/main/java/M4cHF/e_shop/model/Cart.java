@@ -29,4 +29,9 @@ public class Cart {
     private List<CartItem> items;
 
 
+    public void addItem(CartItem newItem) {
+    }
+
+    public void removeItem(CartItem itemToRemove) {
+    }
 }

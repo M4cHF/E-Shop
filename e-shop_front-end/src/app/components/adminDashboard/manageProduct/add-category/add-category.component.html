@@ -1,16 +1,30 @@
 <section class="contact-form">
-    <div class="container">
-      <h2>Add new product</h2>
-      <form #addCategory="ngForm" (ngSubmit)="addCateg(addCategory)">
-        
-        <div class="form-group">
-            <label for="cat_name_add">Category name</label>
-            <input type="text" id="cat_name_add" name="cat_name_add" [(ngModel)]="categoryToAdd.nameCategory" required>
-        </div>     
-  
-        <button type="submit" class="btn btn-secondary btn-block text-uppercase mb-3">Add</button>
-        <br>
-        <a routerLink="/dashboard/manageProducts"><button  class="btn btn-secondary btn-block text-uppercase mb-3">return</button></a>
-      </form>           
-    </div>
-  </section>
+  <div class="container">
+    <h2>Add new Category</h2>
+    <form #addCategory="ngForm" (ngSubmit)="addCateg(addCategory)">
+      <div class="form-group">
+        <label for="cat_name_add">Category name</label>
+        <input
+          type="text"
+          id="cat_name_add"
+          name="cat_name_add"
+          [(ngModel)]="categoryToAdd.nameCategory"
+          required
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-secondary btn-block text-uppercase mb-3"
+      >
+        Add
+      </button>
+      <br />
+      <a routerLink="/dashboard/manageProducts"
+        ><button class="btn btn-secondary btn-block text-uppercase mb-3">
+          return
+        </button></a
+      >
+    </form>
+  </div>
+</section>

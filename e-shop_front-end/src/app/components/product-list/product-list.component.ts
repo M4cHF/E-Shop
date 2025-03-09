@@ -3,6 +3,7 @@ import { ProductService } from '../../services/product.service';
 import { Product } from '../../interfaces/product';
 
 import { FormsModule } from '@angular/forms';
+import { CategoryService } from '../../services/category.service';
 
 @Component({
   selector: 'product-list',

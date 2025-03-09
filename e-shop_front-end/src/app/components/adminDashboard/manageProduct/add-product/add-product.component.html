@@ -1,32 +1,79 @@
 <section class="contact-form">
-    <div class="container">
-      <h2>Add new product</h2>
-      <form #addProduct="ngForm" (ngSubmit)="addProd(addProduct)">
-        
-        <div class="form-group">
-            <label for="prod_name_add">Product name</label>
-            <input type="text" id="prod_name_add" name="prod_name_add" [(ngModel)]="productToAdd.nameProduct" required>
-        </div>
-        <div class="form-group">
-            <label for="prod_price-add">Product price</label>
-            <input type="text" id="prod_price-add" name="prod_price-add" [(ngModel)]="productToAdd.priceProduct"  required>
-        </div>
-        <div class="form-group">
-            <label for="prod_image_add">Product image url</label>
-            <input type="text" id="prod_image_add" name="prod_image_add" [(ngModel)]="productToAdd.imageUrl" required>
-        </div>
-        <div class="form-group">
-            <label for="prod_description_add">Product description</label>
-            <textarea id="prod_description_add" name="prod_description_add" rows="5" [(ngModel)]="productToAdd.descriptionProduct" required></textarea>
-        </div>
-        <div class="form-group">
-            <label for="category_id_add">Category id</label>
-            <input type="number" id="category_id_add" name="category_id_add" min="1" [(ngModel)]="productToAdd.idCategory" required>
-        </div>
-  
-        <button type="submit" class="btn btn-secondary btn-block text-uppercase mb-3">Add</button>
-        <br>
-        <a routerLink="/dashboard/manageProducts"><button  class="btn btn-secondary btn-block text-uppercase mb-3">return</button></a>
-      </form>           
-    </div>
-  </section>
+  <div class="container">
+    <h2>Add new product</h2>
+    <form #addProduct="ngForm" (ngSubmit)="addProd(addProduct)">
+      <div class="form-group">
+        <label for="prod_name_add">Product name</label>
+        <input
+          type="text"
+          id="prod_name_add"
+          name="prod_name_add"
+          [(ngModel)]="productToAdd.nameProduct"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="prod_price-add">Product price</label>
+        <input
+          type="text"
+          id="prod_price-add"
+          name="prod_price-add"
+          [(ngModel)]="productToAdd.priceProduct"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="prod_image_add">Product image url</label>
+        <input
+          type="text"
+          id="prod_image_add"
+          name="prod_image_add"
+          [(ngModel)]="productToAdd.imageUrl"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="prod_description_add">Product description</label>
+        <textarea
+          id="prod_description_add"
+          name="prod_description_add"
+          rows="5"
+          [(ngModel)]="productToAdd.descriptionProduct"
+          required
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="category_id_add">Category id</label>
+        <select
+          id="category_id_update"
+          name="category_id_add"
+          class="form-select"
+          [(ngModel)]="catId"
+          required
+        >
+          <option selected>Select a category</option>
+          @for (category of categories; track category) {
+          <option value="{{ category.idCategory }}" [(ngModel)]="catId">
+            {{ category.nameCategory }}
+          </option>
+          } @empty {
+          <option value="0">No Category found</option>
+          }
+        </select>
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-secondary btn-block text-uppercase mb-3"
+      >
+        Add
+      </button>
+      <br />
+      <a routerLink="/dashboard/manageProducts"
+        ><button class="btn btn-secondary btn-block text-uppercase mb-3">
+          return
+        </button></a
+      >
+    </form>
+  </div>
+</section>

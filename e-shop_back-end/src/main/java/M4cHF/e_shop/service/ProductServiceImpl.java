@@ -3,20 +3,21 @@ package M4cHF.e_shop.service;
 
 import M4cHF.e_shop.exception.ResourceNotFoundException;
 import M4cHF.e_shop.model.Product;
+import M4cHF.e_shop.repository.CategoryRepository;
 import M4cHF.e_shop.repository.ProductRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
+    private final CategoryRepository categoryRepository;
 
-    ProductServiceImpl(ProductRepository productRepository) {
-        this.productRepository = productRepository;
-    }
 
 // GET
     @Override

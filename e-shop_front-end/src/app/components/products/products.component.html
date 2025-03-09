@@ -1,6 +1,6 @@
 <div class="main-title">
-  <h1>Our products</h1>
-  <p>
+  <h1 class="ms-3">Our products</h1>
+  <p class="ms-5">
     Explore our curated collection of chic and versatile clothing, designed to
     effortlessly take you from day to night with timeless elegance.
   </p>
@@ -11,14 +11,50 @@
     <h2>Categories</h2>
     <ul>
       @for (category of categories; track category) {
-      <li>{{ category.nameCategory }}</li>
+      <li>
+        {{ category.nameCategory }}
+      </li>
       } @empty {
       <li>No categoryfound !</li>
       }
     </ul>
   </div>
 
-  <div class="products-side">
+  <!-- <div class="products-side">
     <product-list></product-list>
+  </div>
+</div> -->
+
+  <div class="products-side">
+    <div class="ms-3">
+      <h1>Our products</h1>
+
+      <div class="input-group mb-3">
+        <input
+          type="search"
+          class="form-control"
+          placeholder="search for products"
+          #query
+          (keyup)="searchForProducts(query.value)"
+          (blur)="searchForProducts('')"
+        />
+
+        <div class="input-group-append">
+          <button class="btn btn-primary">Search</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-grid">
+      @if(!isLoading && filteredProducts.length > 0) { @for(prod of
+      filteredProducts; track prod) {
+      <div class="product-card">
+        <img src="{{ prod.imageUrl }}" alt="Product {{ prod.idProduct }}" />
+        <h3>{{ prod.nameProduct }}</h3>
+        <p>${{ prod.priceProduct }}</p>
+        <button>Add to Cart</button>
+      </div>
+      } @empty { there is nothing here } }
+    </div>
   </div>
 </div>
